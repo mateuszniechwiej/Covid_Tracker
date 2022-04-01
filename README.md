@@ -68,9 +68,12 @@ User displays covid data(consumed from an api ) for selected country.
 * [Angular](https://angular.io/) - to built UI
 * [Django](https://www.djangoproject.com/) - web framework used to build this application.
 * [django REST framework](https://www.django-rest-framework.org/) - for building Web API.
+* [postman](https://www.postman.com/) - to test API with put,get,post, delete methods.
 
 ## Testing 
-
+1. To test API I've used [postman](https://www.postman.com/)
+![Api Test](docs/ApiTest.PNG)
+Comments: GET, POST, PUT, DELETE tested(img :point_up_2:)
 ## Project Initiation
 
 ### Create Project Enviroment(VSCode)
