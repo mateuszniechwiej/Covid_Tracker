@@ -17,6 +17,7 @@ User displays covid data(consumed from an api ) for selected country.
     - [Create GitHub repository](#create-github-repository)
   - [Database](#database)
     - [Database Model and MSSQL Connection](#database-model-and-mssql-connection)
+    - [Populate DB](#populate-db)
 
 
 
@@ -127,3 +128,11 @@ Comment:  we can check ODBC driver running python shell in VS CODE terminal.
 7. Go to MSSQLMS to see new created table:
 ![DBTable](docs/Table.PNG)
 
+### Populate DB
+To populate DB with data from external API(disease.sh):
+1. In api app create a management directory with a commands directory inside.
+`/management/commands/`
+2. Create a file (in this case `script.py`) with functions to get and upload data.
+3. Run in terminal : `python manage.py script`
+
+Docs: [How to create custom django-admin commands](https://docs.djangoproject.com/en/4.0/howto/custom-management-commands/)
