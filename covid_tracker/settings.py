@@ -26,7 +26,9 @@ SECRET_KEY = 'django-insecure-+4ov@3=2lqa96+ie-(ao32g(ihet(c4f(k0#ane&)sc!4p$6wv
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:4200",
+]
 
 # Application definition
 
@@ -40,6 +42,7 @@ INSTALLED_APPS = [
 
     'api',
     'rest_framework',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
@@ -50,6 +53,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
 ]
 
 ROOT_URLCONF = 'covid_tracker.urls'

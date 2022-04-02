@@ -54,7 +54,6 @@ User displays covid data(consumed from an api ) for selected country.
 * [JavaScript](https://pl.wikipedia.org/wiki/JavaScript)
 
 * [Python](https://www.python.org/)
-    - Python Modules used in this project can be found in the requirements.txt project file)
 
 ## Frameworks, Programmes, Database and Libraries
 * [techsini](https://techsini.com/) - to generate website mock-up. 
