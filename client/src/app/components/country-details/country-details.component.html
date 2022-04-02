@@ -1,1 +1,47 @@
-<p>country-details works!</p>
+<div *ngIf="viewMode; else editable">
+    <div *ngIf="currentCountry.country">
+        <h4>Covid Country details</h4>
+        <div>
+            <label><strong>Country:</strong></label> {{ currentCountry.country }}
+        </div>
+        <div>
+            <label><strong>Code:</strong></label>
+            {{ currentCountry.code }}
+        </div>
+        <a class="btn btn-warning" routerLink="/countries/{{ currentCountry.id }}/">
+            Edit
+        </a>
+    </div>
+    <div *ngIf="!currentCountry">
+        <br />
+        <p>Please click on a Caountry...</p>
+    </div>
+</div>
+<ng-template #editable>
+    <div *ngIf="currentCountry.country" class="edit-form">
+        <h4>Country Covid numbers</h4>
+        <form>
+            <div class="form-group">
+                <label for="title">Country</label>
+                <input type="text" class="form-control" id="title" [(ngModel)]="currentCountry.country"
+                    name="country" />
+            </div>
+            <div class="form-group">
+                <label for="description">Description</label>
+                <input type="text" class="form-control" id="description" [(ngModel)]="currentCountry.code"
+                    name="code" />
+            </div>
+        </form>
+        <button class="btn btn-danger m-2" (click)="deleteCountry()">
+            Delete
+        </button>
+        <button type="submit" class="btn btn-success m-2" (click)="updateCountry()">
+            Update
+        </button>
+        <p>{{ message }}</p>
+    </div>
+    <div *ngIf="!currentCountry.id">
+        <br />
+        <p>Cannot access this Country...</p>
+    </div>
+</ng-template>

@@ -6,13 +6,16 @@
     <div class="col-md-6">
         <h4>Countries List</h4>
         <ul class="list-group">
-            <li class="list-group-item" *ngFor="let country of countries; let i = index">
+            <li class="list-group-item" *ngFor="let country of countries; let i = index"
+                [class.active]="i == currentIndex" (click)="setActiveCountry(country, i)">
                 {{ country.country }}
             </li>
         </ul>
-        <button class="m-3 btn btn-sm btn-danger">
+        <button class="m-3 btn btn-sm btn-danger" (click)="removeAllCountries()">
             Remove All
         </button>
     </div>
     <div class="col-md-6">
-        <app-country-details></app-country-details>
+        <app-country-details [viewMode]="true" [currentCountry]="currentCountry"></app-country-details>
+    </div>
+</div>
