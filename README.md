@@ -2,6 +2,9 @@
 This project is a full-stack Django project with  Angular used for the front-end.
 User displays covid data(consumed from an api ) for selected country.
 
+![CovidTracker](docs/CovidTracker.png)
+![CovidTracker2](docs/CovidTracker2.png)
+
 # Table of Contest
 
 - [Covid Tracker](#covid-tracker)
@@ -18,6 +21,9 @@ User displays covid data(consumed from an api ) for selected country.
   - [Database](#database)
     - [Database Model and MSSQL Connection](#database-model-and-mssql-connection)
     - [Populate DB](#populate-db)
+  - [UI](#ui)
+    - [App structure](#app-structure)
+    - [Creating Angular App](#creating-angular-app)
 
 
 
@@ -58,13 +64,12 @@ User displays covid data(consumed from an api ) for selected country.
 ## Frameworks, Programmes, Database and Libraries
 * [techsini](https://techsini.com/) - to generate website mock-up. 
 * [Visual Studio Code](https://code.visualstudio.com/) - used for developing this website and commit the project to GitHub repository.
-* [Chrome Developer Tools](https://developers.google.com/web/tools/chrome-devtools) - used to debug the styling issues, test the website responsiveness and to make sure colour contrast is correct.
+* [Chrome Developer Tools](https://developers.google.com/web/tools/chrome-devtools) - used to debug the application.
+* [Lucidchart](https://www.lucidchart.com/) - used to create Angular client app structure.
 * [Github](https://github.com/) - Github as the hosting site was used to store the source code of this website.
 * [Git](https://git-scm.com/) - used Git to commit and push code to the GitHub repository.
-* [Favicon](https://favicon.io/) - to create a favicon for this Website.
-* [Lighthouse](https://developers.google.com/web/tools/lighthouse) - as a part of the chrome dev tool was used to improve the quality of the web page.
 * [MSSQL](https://www.microsoft.com/en-ie/sql-server/sql-server-downloads) - database used in the project
-* [Angular](https://angular.io/) - to built UI
+* [Angular 13](https://angular.io/) - to built UI
 * [Django](https://www.djangoproject.com/) - web framework used to build this application.
 * [django REST framework](https://www.django-rest-framework.org/) - for building Web API.
 * [postman](https://www.postman.com/) - to test API with put,get,post, delete methods.
@@ -138,3 +143,20 @@ To populate DB with data from external API(disease.sh):
 3. Run in terminal : `python manage.py script`
 
 Docs: [How to create custom django-admin commands](https://docs.djangoproject.com/en/4.0/howto/custom-management-commands/)
+
+
+## UI
+
+### App structure
+
+![clientApp](docs/clientApp.png)
+
+### Creating Angular App
+1. In cmd in the COVIDTRACKER folder type :  `ng new client --strict false`
+2. Would you like to add Angular routing? Type: `Yes`
+3. Which stylesheet format would you like to use? select: `CSS`
+3. To open the Vs Code terminal run : `code . `
+4. Once app created run in the client folder `ng serve` to test application.
+5. Create service to comunicate with api in vs code terminal `ng c service api`.
+6. Create components by running `ng g c components/countries-list` and `ng g c components/country-details`.
+7. To create angular model, in the terminal run : `ng g class models/covid`.
