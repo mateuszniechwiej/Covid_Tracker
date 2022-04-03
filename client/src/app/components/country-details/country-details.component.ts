@@ -55,15 +55,4 @@ export class CountryDetailsComponent implements OnInit {
         error: (e) => console.error(e)
       });
   }
-  deleteCountry(): void {
-    this.apiService.delete(this.currentCountry.id)
-      .subscribe({
-        next: (res) => {
-          console.log(res);
-          this.router.navigate(['/countries']);
-        },
-        error: (e) => console.error(e)
-      });
-  }
-
 }

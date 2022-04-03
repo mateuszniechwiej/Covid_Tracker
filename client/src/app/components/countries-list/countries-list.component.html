@@ -1,19 +1,13 @@
 <div class="list row">
-    <div class="col-md-8">
-        <div class="input-group mb-3">
-        </div>
-    </div>
-    <div class="col-md-6">
+    <div class="col-md-6 mb-3 mt-5">
         <h4>Countries List</h4>
-        <ul class="list-group">
-            <li class="list-group-item" *ngFor="let country of countries; let i = index"
+        <ul class="list-group" *ngFor="let country of countries; let i = index">
+            <li class="list-group-item"
+                *ngIf="country.code === 'IE' || country.code === 'GB' || country.code === 'ES' || country.code === 'DE' || country.code === 'IT' "
                 [class.active]="i == currentIndex" (click)="setActiveCountry(country, i)">
                 {{ country.country }}
             </li>
         </ul>
-        <button class="m-3 btn btn-sm btn-danger" (click)="removeAllCountries()">
-            Remove All
-        </button>
     </div>
     <div class="col-md-6">
         <app-country-details [viewMode]="true" [currentCountry]="currentCountry"></app-country-details>

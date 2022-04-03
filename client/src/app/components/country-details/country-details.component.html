@@ -1,4 +1,4 @@
-<div *ngIf="viewMode; else editable">
+<div *ngIf="viewMode; else editable" class="mt-5">
     <div *ngIf="currentCountry.country">
         <h4>Covid Country details</h4>
         <div>
@@ -8,13 +8,25 @@
             <label><strong>Code:</strong></label>
             {{ currentCountry.code }}
         </div>
-        <a class="btn btn-warning" routerLink="/countries/{{ currentCountry.id }}/">
+        <div>
+            <label><strong>Total Cases:</strong></label>
+            {{ currentCountry.total_cases }}
+        </div>
+        <div>
+            <label><strong>Total Deaths:</strong></label>
+            {{ currentCountry.total_deaths }}
+        </div>
+        <div>
+            <label><strong>Total Recovered:</strong></label>
+            {{ currentCountry.total_recovered }}
+        </div>
+        <button class="btn btn-outline-warning mt-4" routerLink="/countries/{{ currentCountry.id }}/">
             Edit
-        </a>
+        </button>
     </div>
     <div *ngIf="!currentCountry">
         <br />
-        <p>Please click on a Caountry...</p>
+        <p>Please click on a Country...</p>
     </div>
 </div>
 <ng-template #editable>
@@ -27,17 +39,30 @@
                     name="country" />
             </div>
             <div class="form-group">
-                <label for="description">Description</label>
+                <label for="description">Code</label>
                 <input type="text" class="form-control" id="description" [(ngModel)]="currentCountry.code"
                     name="code" />
             </div>
+            <div class="form-group">
+                <label for="description">Total Cases</label>
+                <input type="text" class="form-control" id="description" [(ngModel)]="currentCountry.total_cases"
+                    name="total_cases" />
+            </div>
+            <div class="form-group">
+                <label for="description">Total Deaths</label>
+                <input type="text" class="form-control" id="description" [(ngModel)]="currentCountry.total_deaths"
+                    name="total_deaths" />
+            </div>
+            <div class="form-group">
+                <label for="description">Total Recovered</label>
+                <input type="text" class="form-control" id="description" [(ngModel)]="currentCountry.total_recovered"
+                    name="total_recovered" />
+            </div>
         </form>
-        <button class="btn btn-danger m-2" (click)="deleteCountry()">
-            Delete
-        </button>
-        <button type="submit" class="btn btn-success m-2" (click)="updateCountry()">
+        <button type="submit" class="btn btn-outline-success m-2" (click)="updateCountry()">
             Update
         </button>
+        <a href="#" class="btn btn-outline-primary ml-2">Back to Countries</a>
         <p>{{ message }}</p>
     </div>
     <div *ngIf="!currentCountry.id">
