@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Covid } from 'src/app/models/covid.model';
 import { ApiService } from 'src/app/service/api.service';
+import { CountryDetailsComponent } from '../country-details/country-details.component';
 
 
 @Component({

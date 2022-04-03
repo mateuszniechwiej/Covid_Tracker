@@ -5,7 +5,7 @@
             <li class="list-group-item"
                 *ngIf="country.code === 'IE' || country.code === 'GB' || country.code === 'ES' || country.code === 'DE' || country.code === 'IT' "
                 [class.active]="i == currentIndex" (click)="setActiveCountry(country, i)">
-                {{ country.country }}
+                {{ country.country}}: {{country.code | lowercase}}
             </li>
         </ul>
     </div>
