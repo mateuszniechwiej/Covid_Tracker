@@ -20,7 +20,7 @@ User displays covid data(consumed from an api ) for the selected country.
 
 - [Table of Contest](#table-of-contest)
 
-  - [_Project Goal_](#project-goal)
+  - [Project Goal](#project-goal)
 
   - [Technologies Used](#technologies-used)
 
@@ -58,7 +58,7 @@ User displays covid data(consumed from an api ) for the selected country.
 
 
 
-## _Project Goal_
+## Project Goal
 
 
 
@@ -121,9 +121,33 @@ User displays covid data(consumed from an api ) for the selected country.
 
 
 * [Python](https://www.python.org/)
+<details>
+<summary>Python modules used in this project:</summary>
 
-
-
+asgiref==3.5.0
+certifi==2021.10.8
+charset-normalizer==2.0.12
+click==8.1.0
+colorama==0.4.4
+Django==4.0.3
+django-cors-headers==3.11.0
+django-mssql-backend==2.8.1
+djangorestframework==3.13.1
+Faker==13.3.4
+idna==3.3
+mssql-django==1.1.2
+psycopg2-binary==2.9.3
+pyodbc==4.0.32
+python-dateutil==2.8.2
+python-seed==1.1.1
+pytz==2022.1
+requests==2.27.1
+six==1.16.0
+sqlparse==0.4.2
+toposort==1.7
+tzdata==2022.1
+urllib3==1.26.9
+</details>
 ## Frameworks, Programmes, Database and Libraries
 
 * [techsini](https://techsini.com/) - to generate website mock-up. 
@@ -146,6 +170,10 @@ User displays covid data(consumed from an api ) for the selected country.
 
 * [django REST framework](https://www.django-rest-framework.org/) - for building Web API.
 
+* [Bootstrap 5](https://getbootstrap.com) - 
+
+    used for layouts, styling and custom components
+
 * [postman](https://www.postman.com/) - to test API with put,get,post, delete methods.
 
 
@@ -166,11 +194,11 @@ Comments: GET, POST, PUT, DELETE tested(img :point_up_2:)
 
   - selecting all countries displaying correct data. - Pass
 
-  -` update` button redirecting to countries/{id}.
+  -` update` button redirecting to countries/{id}. - Pass
 
   - update fields with a message displaying `This country was updated succesfully` - Pass
 
-  - checking in SQL managment studio if Data Base updated. - Pass
+  - checking in SQL managment studio if DB updated. - Pass
 
   - `Back to Countries` button - Pass
 
@@ -272,7 +300,11 @@ __(You need to have installed Python extensions and Python version 3 before taki
 
 }```
 
-Comment:  we can check ODBC driver running python shell in VS CODE terminal.
+Comment:  we can check ODBC driver running python shell in VS CODE terminal and next running 
+``` 
+import pyodbc
+pyodbc.drivers() 
+```
 
 3. In MSSQL Management Studio create database `CovidTracker`
 
@@ -336,6 +368,6 @@ Docs: [How to create custom django-admin commands](https://docs.djangoproject.co
 
 5. Create a service to communicate with api in vs code terminal `ng c service api`.
 
-6. Create components by running `ng g c components/countries list and `ng g c components/country details.
+6. Create components by running `ng g c components/countries list ` and `ng g c components/country details`.
 
-7. To create an angular model, in the terminal run: `ng g class 
+7. To create an angular model, in the terminal run: `ng g class models/country --type=model`.
